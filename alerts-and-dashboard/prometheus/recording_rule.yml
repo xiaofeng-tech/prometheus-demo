@@ -1,0 +1,5 @@
+groups:
+  - name: process_ops_avg
+    rules:
+    - record: process_ops:avg
+      expr: sum(myapp_processed_ops_total)
