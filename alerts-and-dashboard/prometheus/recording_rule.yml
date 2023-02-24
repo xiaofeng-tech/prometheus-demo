@@ -1,5 +1,9 @@
 groups:
   - name: process_ops_avg
+    interval: 5s
     rules:
-    - record: process_ops:avg
+    - record: instance_path:process_ops:avg
       expr: sum(myapp_processed_ops_total)
+      labels:
+        team: xiaofeng
+        artefact: prometheus-demo

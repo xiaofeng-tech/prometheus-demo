@@ -1,0 +1,12 @@
+groups:
+  - name: alert-demo
+    rules:
+    - alert: myapp_processed_ops_total greater than 50
+      expr: myapp_processed_ops_total > 50
+      for: 2m
+      labels: 
+        severity: caused
+        team: xiaofeng
+        artefact: prometheus-demo
+      annotations:
+        desc: please restart go application for prometheus-demo
