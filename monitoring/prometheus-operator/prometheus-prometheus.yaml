@@ -37,7 +37,12 @@ spec:
     requests:
       memory: 400Mi
   ruleNamespaceSelector: {}
-  ruleSelector: {}
+    # matchLabels:
+      # team: frontend
+  ruleSelector: 
+    matchLabels:
+      role: alert-rules
+      prometheus: example
   securityContext:
     fsGroup: 2000
     runAsNonRoot: true
