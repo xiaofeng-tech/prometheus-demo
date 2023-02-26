@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: go-app
+  labels:
+    team: xiaofeng
+spec:
+  selector:
+    matchLabels:
+      app: go-app
+  endpoints:
+  - port: web
+    interval: 15s
+    scrapeTimeout: 5s

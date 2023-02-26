@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+    labels:
+      team: xiaofeng
+    name: go-app
+spec:
+  groups:
+  - name: go-app-alet-ruels
+    interval: 30s
+    rules:
+    - alert: rate_of_process_ops_granter_than_2
+      expr: delta(myapp_processed_ops_total[2m]) > 2
+      for: 20s
